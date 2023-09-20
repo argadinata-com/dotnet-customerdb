@@ -19,7 +19,7 @@ namespace CustomerDb.Models
         public string? updated_by { get; set; }
 
         // Navigation Properties
-        public virtual Company company { get; set; } = new Company();
+        public virtual Company? company { get; set; }
     }
 
     public class ContactRequest

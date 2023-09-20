@@ -20,7 +20,7 @@ namespace CustomerDb.Models
 
         // Navigation Properties
         [ForeignKey("company_id")]
-        public virtual ICollection<Contact> contacts { get; set; } = new List<Contact>();
+        public virtual ICollection<Contact>? contacts { get; set; }
     }
 
     public class CompanyRequest

@@ -32,19 +32,19 @@ namespace CustomerDb.Repositories
             _db = db;
         }
 
-        public IEnumerable<TEntity> Get() => _db.Set<TEntity>().Where(x => x.row_status == 1).OrderBy(x => x.name);
+        public virtual IEnumerable<TEntity> Get() => _db.Set<TEntity>().Where(x => x.row_status == 1).OrderBy(x => x.name);
 
-        public TEntity? Get(int id) => _db.Set<TEntity>().Where(x => x.row_status == 1 && x.id == id).FirstOrDefault();
+        public virtual TEntity? Get(int id) => _db.Set<TEntity>().Where(x => x.row_status == 1 && x.id == id).FirstOrDefault();
 
-        public void Create(TEntity entity) => _db.Set<TEntity>().Add(entity);
+        public virtual void Create(TEntity entity) => _db.Set<TEntity>().Add(entity);
 
-        public void Update(TEntity entity)
+        public virtual void Update(TEntity entity)
         {
             entity.updated_at = DateTime.Now;
             _db.Set<TEntity>().Update(entity);
         }
 
-        public void Delete(int id)
+        public virtual void Delete(int id)
         {
             TEntity? entity = Get(id);
 
