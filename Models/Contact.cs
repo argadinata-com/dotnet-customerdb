@@ -21,4 +21,28 @@ namespace CustomerDb.Models
         // Navigation Properties
         public virtual Company company { get; set; } = new Company();
     }
+
+    public class ContactRequest
+    {
+        public int company_id { get; set; }
+        public string name { get; set; } = string.Empty;
+        public string phone_no { get; set; } = string.Empty;
+        public string? email { get; set; }
+        public string? job_title { get; set; }
+    }
+
+    public class ContactResponse
+    {
+        public int id { get; set; }
+        public int company_id { get; set; }
+        public string name { get; set; } = string.Empty;
+        public string phone_no { get; set; } = string.Empty;
+        public string? email { get; set; }
+        public string? job_title { get; set; }
+        public string company_name { get; set; } = string.Empty;
+        public string? company_website { get; set; }
+        public string? company_email { get; set; }
+        public string? company_phone_no { get; set; }
+        public string? company_address { get; set; }
+    }
 }

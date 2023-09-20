@@ -22,4 +22,23 @@ namespace CustomerDb.Models
         [ForeignKey("company_id")]
         public virtual ICollection<Contact> contacts { get; set; } = new List<Contact>();
     }
+
+    public class CompanyRequest
+    {
+        public string name { get; set; } = string.Empty;
+        public string? website { get; set; }
+        public string? email { get; set; }
+        public string? phone_no { get; set; }
+        public string? address { get; set; }
+    }
+
+    public class CompanyResponse
+    {
+        public int id { get; set; }
+        public string name { get; set; } = string.Empty;
+        public string? website { get; set; }
+        public string? email { get; set; }
+        public string? phone_no { get; set; }
+        public string? address { get; set; }
+    }
 }
