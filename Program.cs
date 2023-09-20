@@ -10,6 +10,9 @@ string? connectionString = builder.Configuration.GetConnectionString("Default");
 ServerVersion serverVersion = ServerVersion.AutoDetect(connectionString);
 builder.Services.AddDbContext<DataContext>(options => options.UseMySql(connectionString, serverVersion));
 
+// AutoMapper.
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
 // Default services from Visual Studio.
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
