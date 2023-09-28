@@ -42,6 +42,8 @@ namespace CustomerDb.Repositories
         {
             entity.updated_at = DateTime.Now;
             _db.Set<TEntity>().Update(entity);
+            _db.Entry(entity).Property(x => x.created_at).IsModified = false;
+            _db.Entry(entity).Property(x => x.created_by).IsModified = false;
         }
 
         public virtual void Delete(int id)
