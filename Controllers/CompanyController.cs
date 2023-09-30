@@ -8,7 +8,7 @@ namespace CustomerDb.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class CompanyController : ControllerBase
+    public class CompanyController : Controller
     {
         private readonly DataContext _db;
         private readonly CompanyRepo _repo;

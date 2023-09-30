@@ -1,4 +1,5 @@
 ﻿using CustomerDb.Repositories;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CustomerDb.Models
@@ -24,8 +25,11 @@ namespace CustomerDb.Models
 
     public class ContactRequest
     {
+        [Required]
         public int company_id { get; set; }
+        [Required]
         public string name { get; set; } = string.Empty;
+        [Required]
         public string phone_no { get; set; } = string.Empty;
         public string? email { get; set; }
         public string? job_title { get; set; }
